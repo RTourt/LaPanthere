@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="description"
-		content="La Panthère est une agence de web design situé à Lyon qui aide les entreprises à devenir attractives et visibles sur internet.">
+		content="La Panthère est une agence de web design situé à Lyon qui apporte son expertise aux entreprises pour devenir attractives et visibles sur internet.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="favicon.png">
 
@@ -97,28 +97,27 @@
 			<div class="container bloc-lg">
 				<div class="row">
 					<div class="col-sm-6">
-						<form id="form_1" novalidate success-msg="Your message has been sent."
-							fail-msg="Sorry it seems that our mail server is not responding, Sorry for the inconvenience!">
+						<form id="form_1" action="form_1.php" method="post">
 							<div class="form-group">
-								<label>
+								<label for="name">
 									Nom
 								</label>
 								<input id="name" class="form-control" required />
 							</div>
 							<div class="form-group">
-								<label>
+								<label for="email">
 									Adresse email
 								</label>
 								<input id="email" class="form-control" type="email" required />
 							</div>
 							<div class="form-group">
-								<label>
+								<label for="input_504">
 									Comment nous avez-vous connu ?
 								</label>
-								<input class="form-control" type="email" required id="input_504" />
+								<input class="form-control" type="text" required id="input_504" />
 							</div>
 							<div class="form-group">
-								<label>
+								<label for="message">
 									Brief de votre projet (Ajoutez autant de détails que nécessaire)<br>
 								</label><textarea id="message" class="form-control" rows="4" cols="50"
 									required></textarea>
@@ -132,8 +131,7 @@
 					<div class="col-sm-6">
 						<p>
 							contact@agencelapanthere.com<br>2 place Sathonay 69001 Lyon<br>Ouvert de 9h à 18h, du lundi
-							au vendredi<br>
-						</p>
+							au vendredi </p>
 					</div>
 				</div>
 			</div>
@@ -152,7 +150,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<p class="text-center white">
-							Agence La Panthère - Agence web basée à Lyon.<br>
+							Agence La Panthère - Agence web basée à Lyon.
 						</p>
 						<div class="row row-no-gutters social">
 							<div class="col-sm-3">

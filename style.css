@@ -53,6 +53,17 @@ a:hover {
     padding: 20px 50px;
 }
 
+.col-xs-12 p {
+    margin-top: 20px;
+}
+
+.col-xs-12,
+.col-sm-12 {
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
 .bg-center,
 .bg-l-edge,
 .bg-r-edge,
@@ -85,8 +96,9 @@ a:hover {
 }
 
 .texture-paper::before {
-    background: url("img/texture-paper-min.png");
-    background-size: 280px 280px;
+    /* background: url("img/texture-paper-min.png");
+    background-size: 280px 280px; */
+    background: rgb(0 0 0 / 30%);
 }
 
 .b-parallax {
@@ -687,7 +699,7 @@ a {
 }
 
 p {
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .tight-width-whitespace {
@@ -1017,10 +1029,19 @@ h4 {
         padding: 40px 0;
     }
 
+    .bloc-lg h2 {
+        font-size: 20px;
+    }
+
     .bloc-sm,
     .bloc-md {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .bloc-lg .col-sm-12 {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .bloc-tile-2 .container,
@@ -1030,6 +1051,10 @@ h4 {
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .black-background {
+        padding: 20px 30px 20px 30px;
     }
 
     .a-block {

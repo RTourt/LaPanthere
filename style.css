@@ -10,7 +10,7 @@ body {
 a,
 button {
     transition: all .3s ease-in-out;
-    outline: none !important;
+    outline: none;
 }
 
 a:hover {
@@ -63,7 +63,7 @@ a:hover {
 .bg-tr-edge,
 .bg-br-edge,
 .bg-repeat {
-    background-size: auto !important;
+    background-size: auto;
 }
 
 .bg-repeat {
@@ -95,6 +95,10 @@ a:hover {
 
 .d-bloc {
     color: rgba(255, 255, 255, .7);
+}
+
+.d-bloc img {
+    width: 100px;
 }
 
 .d-bloc button:hover {
@@ -258,6 +262,10 @@ a:hover {
     border-color: rgba(0, 0, 0, .3);
 }
 
+.d-bloc a .icon-md {
+    font-size: 30px;
+}
+
 .voffset {
     margin-top: 30px;
 }
@@ -299,6 +307,7 @@ a:hover {
     max-height: 200px;
     margin: 0 5px 0 0;
     display: inline;
+    height: 40px;
 }
 
 .navbar-brand img[src$=svg] {
@@ -337,7 +346,7 @@ a:hover {
 }
 
 .navbar-toggle:hover {
-    background: transparent !important;
+    background: transparent;
 }
 
 .navbar-toggle .icon-bar {
@@ -405,7 +414,7 @@ a:hover {
 }
 
 .nav>li>.dropdown a {
-    background: none !important;
+    background: none;
     display: block;
     padding: 14px 15px;
 }
@@ -432,7 +441,7 @@ nav .caret {
     border-top-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
-    margin: 6px -5px 0 0 !important;
+    margin: 6px -5px 0 0;
     float: right;
 }
 
@@ -462,7 +471,7 @@ nav .caret {
 }
 
 button {
-    outline: none !important;
+    outline: none;
 }
 
 .btn-rd {
@@ -477,11 +486,11 @@ button {
 }
 
 .icon-md {
-    font-size: 30px !important;
+    font-size: 30px;
 }
 
 .icon-lg {
-    font-size: 60px !important;
+    font-size: 60px;
 }
 
 .sm-shadow {
@@ -652,7 +661,7 @@ label,
 a {
     font-family: "helvetica";
     font-weight: 400;
-    color: #575757 !important;
+    color: #575757;
 }
 
 .container {
@@ -693,7 +702,7 @@ p {
 
 .cta-hero {
     margin-top: 22px;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     text-transform: uppercase;
     padding: 12px 28px 12px 28px;
     font-size: 16px;
@@ -714,7 +723,7 @@ h3 {
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #333333 !important;
+    color: #333333;
 }
 
 .med-width-whitespace {
@@ -724,11 +733,11 @@ h3 {
 }
 
 h1 {
-    color: #333333 !important;
+    color: #333333;
 }
 
 h4 {
-    color: #333333 !important;
+    color: #333333;
 }
 
 .icons {
@@ -737,7 +746,7 @@ h4 {
 }
 
 .white {
-    color: #FFFFFF !important;
+    color: #FFFFFF;
 }
 
 .portfolio-thumb {
@@ -754,13 +763,13 @@ h4 {
 }
 
 .black-background {
-    background-color: rgba(165, 147, 99, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 40px 40px 40px 40px;
 }
 
 .bold-link {
     font-weight: 900;
-    text-decoration: underline !important;
+    text-decoration: underline;
 }
 
 .bgc-white {
@@ -776,38 +785,38 @@ h4 {
 }
 
 .tc-white {
-    color: #F3976C !important;
+    color: #F3976C;
 }
 
 .btn-atomic-tangerine {
     background: #F3976C;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
 }
 
 .btn-atomic-tangerine:hover {
-    background: #c27956 !important;
-    color: #FFFFFF !important;
+    background: #c27956;
+    color: #FFFFFF;
 }
 
 .ltc-white {
-    color: #FFFFFF !important;
+    color: #FFFFFF;
 }
 
 .ltc-white:hover {
-    color: #cccccc !important;
+    color: #cccccc;
 }
 
 .ltc-atomic-tangerine {
-    color: #F3976C !important;
+    color: #F3976C;
 }
 
 .ltc-atomic-tangerine:hover {
-    color: #c27956 !important;
+    color: #c27956;
 }
 
 .icon-dark-slate-blue {
-    color: #364577 !important;
-    border-color: #364577 !important;
+    color: #364577;
+    border-color: #364577;
 }
 
 .bg-dots-bg {
@@ -819,11 +828,11 @@ h4 {
 }
 
 .bg-banniere {
-    background-image: url("img/agence-la-panthere-min.png");
+    background-image: url("img/agence-la-panthere-min.jpg");
 }
 
 .bg-presentation {
-    background-image: url("img/image-de-presentation-min.png");
+    background-image: url("img/image-de-presentation-min.jpg");
 }
 
 @media (max-width: 1024px) {
@@ -911,8 +920,8 @@ h4 {
     h6,
     p,
     #disqus_thread {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .b-parallax {
@@ -922,7 +931,7 @@ h4 {
     .navbar .nav {
         padding-top: 0;
         border-top: 1px solid rgba(0, 0, 0, .2);
-        float: none !important;
+        float: none;
     }
 
     .navbar.row {
@@ -952,7 +961,7 @@ h4 {
 
     .dropdown .dropdown a .caret {
         float: none;
-        margin: 5px 0 0 10px !important;
+        margin: 5px 0 0 10px;
         border: 4px solid black;
         border-bottom-color: transparent;
         border-right-color: transparent;

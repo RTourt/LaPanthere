@@ -43,6 +43,9 @@ a:hover {
 
 .bloc-lg {
     padding: 100px 50px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .bloc-md {
@@ -375,6 +378,10 @@ a:hover {
     float: right;
     position: relative;
     z-index: 2;
+}
+
+.form-group {
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -1079,6 +1086,11 @@ h4 {
 
     form {
         padding: 5px;
+    }
+
+    .form-group {
+        margin-left: 5px;
+        margin-right: 5px;
     }
 
     .close-lightbox {

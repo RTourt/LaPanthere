@@ -782,6 +782,11 @@ h4 {
     margin-top: 50px;
 }
 
+article a img {
+    width: 100%;
+    height: auto;
+}
+
 .avatar {
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.3);
 }
@@ -805,7 +810,8 @@ h4 {
 }
 
 .bgc-atomic-tangerine {
-    background-color: #F3976C;
+    /* background-color: #F3976C; */
+    background: #712A09;
 }
 
 .tc-white {
@@ -813,7 +819,8 @@ h4 {
 }
 
 .btn-atomic-tangerine {
-    background: #F3976C;
+    /* background: #F3976C; */
+    background: #712A09;
     color: #FFFFFF;
 }
 

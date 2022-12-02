@@ -18,6 +18,11 @@ a:hover {
     cursor: pointer;
 }
 
+quote {
+    color: black;
+    font-size: 16px;
+}
+
 #page-loading-blocs-notifaction {
     position: fixed;
     top: 0;

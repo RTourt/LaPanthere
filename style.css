@@ -119,6 +119,7 @@ quote {
 
 .d-bloc img {
     width: 100px;
+    height: 100px;
 }
 
 .d-bloc button:hover {
@@ -328,6 +329,7 @@ quote {
     margin: 0 5px 0 0;
     display: inline;
     height: 40px;
+    width: 216.88px;
 }
 
 .navbar-brand img[src$=svg] {
@@ -1132,5 +1134,10 @@ article a img {
 @media (max-width: 767px) {
     .bloc-mob-center-text {
         text-align: center;
+    }
+
+    .social {
+        display: flex;
+        justify-content: space-between;
     }
 }

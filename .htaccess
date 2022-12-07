@@ -7,16 +7,87 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
 RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-<ifmodule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/text
-AddOutputFilterByType DEFLATE text/plain
-AddOutputFilterByType DEFLATE text/html
-AddOutputFilterByType DEFLATE text/xml
-AddOutputFilterByType DEFLATE text/css
-AddOutputFilterByType DEFLATE text/javascript
-AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE application/xhtml+xml
-AddOutputFilterByType DEFLATE application/rss+xml
-AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript
-</ifmodule>
+# DEBUT Expire headers
+
+ ExpiresActive On
+ ExpiresDefault "access plus 7200 seconds"
+ ExpiresByType image/jpg "access plus 1 month"
+ ExpiresByType image/jpeg "access plus 1 month"
+ ExpiresByType image/png "access plus 1 month"
+ ExpiresByType image/gif "access plus 1 month"
+ ExpiresByType image/svg+xml "access plus 1 month"
+ AddType image/x-icon .ico
+ ExpiresByType image/ico "access plus 1 month"
+ ExpiresByType image/icon "access plus 1 month"
+ ExpiresByType image/x-icon "access plus 1 month"
+ ExpiresByType text/css "access plus 1 year"
+ ExpiresByType text/javascript "access plus 1 year"
+ ExpiresByType text/html "access plus 7200 seconds"
+ ExpiresByType application/xhtml+xml "access plus 7200 seconds"
+ ExpiresByType application/javascript A259200  
+ ExpiresByType application/x-javascript "access plus 1 year"
+ ExpiresByType application/x-shockwave-flash "access plus 1 year"
+ ExpiresByType application/x-font-woff "access plus 1 year"
+ ExpiresByType application/x-font-ttf "access plus 1 year"
+ ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+ ExpiresByType application/x-font-opentype "access plus 1 year"
+# FIN Expire headers
+
+<IfModule mod_headers.c>
+ <FilesMatch "\.(png|jpg|jpeg|gif)$">
+  Header append Cache-Control "public, no-transform"
+ </FilesMatch>
+</IfModule>
+
+# DEBUT Cache-Control Headers
+<IfModule mod_headers.c>
+ <FilesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff)$">
+ Header set Cache-Control "max-age=290304000, public"
+ </FilesMatch>
+ <FilesMatch "\\.(css)$">
+ Header set Cache-Control "max-age=290304000, public"
+ </FilesMatch>
+ <FilesMatch "\\.(js)$">
+ Header set Cache-Control "max-age=290304000, private"
+ </FilesMatch>
+<filesMatch "\\.(html|htm)$">
+ Header set Cache-Control "max-age=7200, public"
+</filesMatch>
+
+# Désactiver le cache pour les scripts et les fichiers dynamiques
+<FilesMatch "\\.(pl|php|cgi|spl|scgi|fcgi|xml)$">
+Header unset Cache-Control
+</FilesMatch>
+
+<filesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff|html|htm|css|js|pl|php|cgi|spl|scgi|fcgi)$">
+ RequestHeader unset Cookie
+ Header unset Set-Cookie
+</filesMatch>
+
+</IfModule>
+# FIN Cache-Control Headers
+
+<IfModule mod_deflate.c>
+## Activation de la compression apache sur les fichiers
+
+    # Insert filter on all content
+    SetOutputFilter DEFLATE
+    # Insert filter on selected content types only
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    # Netscape 4.x has some problems...
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    # Netscape 4.06-4.08 have some more problems
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    # MSIE masquerades as Netscape, but it is fine
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    # Don't compress images
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+    # Make sure proxies don't deliver the wrong content
+    Header append Vary User-Agent env=!dont-vary
+
+</IfModule>
+
+### Suppression des Etag
+<FilesMatch "\.(jpg|png|gif|svg|ico|css|js|swf|ttf|eot|woff)$">
+FileETag None
+</FilesMatch>

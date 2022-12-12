@@ -16,10 +16,6 @@ body {
 }
 
 .nav>li,
-quote {
-    font-size: 16px
-}
-
 .nav-invert .navbar .nav,
 .nav>li {
     float: left
@@ -48,9 +44,6 @@ a:hover {
     cursor: pointer
 }
 
-quote {
-    color: #000
-}
 
 #page-loading-blocs-notifaction {
     position: fixed;
@@ -868,8 +861,8 @@ article a img {
     }
 
     .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right)
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
 
     .bloc-group,
@@ -881,8 +874,8 @@ article a img {
     .bloc-fill-screen .fill-bloc-bottom-edge,
     .bloc-fill-screen .fill-bloc-top-edge {
         padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right)
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
 }
 

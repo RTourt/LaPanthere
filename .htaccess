@@ -34,14 +34,14 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # FIN Expire headers
 
 <IfModule mod_headers.c>
- <FilesMatch "\.(png|jpg|jpeg|gif)$">
+ <FilesMatch "\.(png|jpg|jpeg|gif|webp)$">
   Header append Cache-Control "public, no-transform"
  </FilesMatch>
 </IfModule>
 
 # DEBUT Cache-Control Headers
 <IfModule mod_headers.c>
- <FilesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff)$">
+ <FilesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff|webp)$">
  Header set Cache-Control "max-age=290304000, public"
  </FilesMatch>
  <FilesMatch "\\.(css)$">
@@ -59,7 +59,7 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 Header unset Cache-Control
 </FilesMatch>
 
-<filesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff|html|htm|css|js|pl|php|cgi|spl|scgi|fcgi)$">
+<filesMatch "\\.(ico|jpe?g|png|gif|svg|swf|gz|ttf|eot|woff|html|htm|css|js|pl|php|cgi|spl|scgi|fcgi|webp)$">
  RequestHeader unset Cookie
  Header unset Set-Cookie
 </filesMatch>
@@ -88,6 +88,6 @@ Header unset Cache-Control
 </IfModule>
 
 ### Suppression des Etag
-<FilesMatch "\.(jpg|png|gif|svg|ico|css|js|swf|ttf|eot|woff)$">
+<FilesMatch "\.(jpg|png|gif|svg|ico|css|js|swf|ttf|eot|woff|webp)$">
 FileETag None
 </FilesMatch>
